@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Details from "./pages/Details";
 import SearchResults from "./pages/SearchResults";
 
+import { GifsContextProvider } from "./context/GifsContext";
 import "./App.css";
 
 export default function App() {
@@ -14,9 +15,11 @@ export default function App() {
         <Link href="/">
           <h1>Giffy</h1>
         </Link>
-        <Route path="/" component={Home} />
-        <Route path="/gifs/:keyword" component={SearchResults} />
-        <Route path="/gif/:id" component={Details} />
+        <GifsContextProvider>
+          <Route path="/" component={Home} />
+          <Route path="/gifs/:keyword" component={SearchResults} />
+          <Route path="/gif/:id" component={Details} />
+        </GifsContextProvider>
       </section>
     </div>
   );
