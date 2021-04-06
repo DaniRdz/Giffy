@@ -8,7 +8,6 @@ export default function Details({ params }) {
   const { gifs } = useContext(GifsContext);
 
   const gif = gifs.find((gif) => gif.id === params.id);
-  console.log("gif", gif);
 
   return <Gif {...gif} />;
 }
