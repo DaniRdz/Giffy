@@ -1,0 +1,24 @@
+.Gif {
+  position: relative;
+  margin-bottom: 0;
+}
+.Gif-link {
+  width: 100%;
+}
+
+.Gif h4 {
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  color: #fff;
+  bottom: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.Gif img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

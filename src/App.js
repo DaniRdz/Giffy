@@ -13,7 +13,7 @@ export default function App() {
     <div className="App">
       <section className="App-content">
         <Link href="/">
-          <h1>Giffy</h1>
+          <h1 className="App-title">Giffy</h1>
         </Link>
         <GifsContextProvider>
           <Route path="/" component={Home} />
