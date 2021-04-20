@@ -1,0 +1,8 @@
+.trendig-search-categories a {
+  text-transform: capitalize;
+  transition: 0.3s ease-in-out;
+}
+
+.trendig-search-categories a:hover {
+  color: #cbcbcb;
+}

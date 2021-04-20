@@ -10,6 +10,9 @@ export default function SearchResults({ params }) {
 
   return (
     <>
+      <h3 style={{ textAlign: "left", textTransform: "capitalize" }}>
+        Gifs Of {decodeURI(keyword)}
+      </h3>
       <ListOfGifs gifs={gifs} />
     </>
   );
