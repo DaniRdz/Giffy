@@ -14,7 +14,6 @@ export default function SearchResults({ params }) {
   });
 
   const handleClickNextPage = () => setPage((prevPage) => prevPage + 1);
-  //const handleClickNextPage = () => console.log("next page");
 
   useEffect(
     function () {
