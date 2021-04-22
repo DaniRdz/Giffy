@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import ListOfGifs from "../../components/ListOfGifs";
 
 import { useGifs } from "../../hooks/useGifs";
+import useNearScreen from "../../hooks/useNearScreen";
 
 export default function SearchResults({ params }) {
   const { keyword } = params;
   const { gifs, setPage } = useGifs({ keyword });
+  const { isNearScreen, fromRef } = useNearScreen({
+    once: false,
+    distance: "500px",
+  });
 
   const handleClickNextPage = () => setPage((prevPage) => prevPage + 1);
+  //const handleClickNextPage = () => console.log("next page");
+
+  useEffect(
+    function () {
+      if (isNearScreen) handleClickNextPage();
+    },
+    [isNearScreen]
+  );
 
   return (
     <>
@@ -16,8 +29,7 @@ export default function SearchResults({ params }) {
         Gifs Of {decodeURI(keyword)}
       </h3>
       <ListOfGifs gifs={gifs} />
-      <br />
-      <button onClick={handleClickNextPage}>See More Gifs</button>
+      <div id="visor" ref={fromRef}></div>
     </>
   );
 }
