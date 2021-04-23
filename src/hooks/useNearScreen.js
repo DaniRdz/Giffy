@@ -8,6 +8,7 @@ export default function useNearScreen({
   const fromRef = useRef();
 
   useEffect(function () {
+    let observer;
     const onChange = (entries, observer) => {
       const el = entries[0];
       if (el.isIntersecting) {
@@ -18,11 +19,17 @@ export default function useNearScreen({
       }
     };
 
-    const observer = new IntersectionObserver(onChange, {
-      rootMargin: distance,
-    });
+    Promise.resolve(
+      typeof IntersectionObserver !== "undefined"
+        ? IntersectionObserver
+        : import("intersection-observer")
+    ).then(() => {
+      observer = new IntersectionObserver(onChange, {
+        rootMargin: distance,
+      });
 
-    observer.observe(fromRef.current);
+      observer.observe(fromRef.current);
+    });
     return () => observer.disconnect();
   });
 
