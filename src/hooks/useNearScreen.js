@@ -30,7 +30,7 @@ export default function useNearScreen({
 
       observer.observe(fromRef.current);
     });
-    return () => observer.disconnect();
+    return () => observer && observer.disconnect();
   });
 
   return { isNearScreen, fromRef };

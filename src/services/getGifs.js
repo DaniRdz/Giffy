@@ -5,7 +5,7 @@ export default function getGifs({
   page = 0,
 } = {}) {
   const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=${limit}&offset=${
-    page * limit + 1
+    page * limit
   }&rating=g&lang=en`;
 
   return fetch(apiURL)

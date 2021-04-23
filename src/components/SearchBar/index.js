@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useLocation } from "wouter";
 
 import "./SearchBar.css";
 
-export default function SearchBar() {
+function SearchBar({ onSubmit }) {
   const [keyword, setKeyword] = useState("");
-  const [path, pushLocation] = useLocation();
 
   const handleChange = (e) => {
     setKeyword(e.target.value);
@@ -13,7 +11,7 @@ export default function SearchBar() {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    pushLocation(`/gifs/${keyword}`);
+    onSubmit({ keyword });
   };
   return (
     <form className="search-bar" onSubmit={handleOnSubmit}>
@@ -27,3 +25,5 @@ export default function SearchBar() {
     </form>
   );
 }
+
+export default React.memo(SearchBar);

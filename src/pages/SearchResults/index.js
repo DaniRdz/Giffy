@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
+import debounce from "just-debounce-it";
 
 import ListOfGifs from "../../components/ListOfGifs";
 
@@ -13,13 +14,16 @@ export default function SearchResults({ params }) {
     distance: "500px",
   });
 
-  const handleClickNextPage = () => setPage((prevPage) => prevPage + 1);
+  const debounceHandleNextPage = useCallback(
+    debounce(() => setPage((prevPage) => prevPage + 1), 1000),
+    []
+  );
 
   useEffect(
     function () {
-      if (isNearScreen) handleClickNextPage();
+      if (isNearScreen) debounceHandleNextPage();
     },
-    [isNearScreen]
+    [isNearScreen, debounceHandleNextPage]
   );
 
   return (
