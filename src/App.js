@@ -19,6 +19,10 @@ export default function App() {
           <Route path="/" component={Home} />
           <Route path="/gifs/:keyword" component={SearchResults} />
           <Route path="/gif/:id" component={Details} />
+          <Route
+            path="/404"
+            component={() => <h1>WOOOOOOPS... SOME ERROR OCURRED</h1>}
+          />
         </GifsContextProvider>
       </section>
     </div>

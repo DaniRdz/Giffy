@@ -1,13 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
+import { Redirect } from "wouter";
 
 import Gif from "../../components/Gif";
 
-import GifsContext from "../../context/GifsContext";
+import useSingleGif from "../../hooks/useSingleGif";
 
 export default function Details({ params }) {
-  const { gifs } = useContext(GifsContext);
+  const { gif, isLoading, isError } = useSingleGif({ id: params.id });
 
-  const gif = gifs.find((gif) => gif.id === params.id);
+  if (isError) return <Redirect to="/404" />;
 
-  return <Gif {...gif} />;
+  return isLoading ? <div>LOADING...</div> : <Gif {...gif} />;
 }

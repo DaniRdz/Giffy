@@ -12,8 +12,8 @@ export default function getGifs({
     .then((res) => res.json())
     .then((res) => {
       const { data } = res;
-      const gifs = data.map((img) => {
-        const { images, title, id } = img;
+      const gifs = data.map((gif) => {
+        const { images, title, id } = gif;
         const { url } = images.downsized_medium;
         return { title, id, url };
       });
