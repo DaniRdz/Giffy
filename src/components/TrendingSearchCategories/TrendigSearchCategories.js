@@ -17,7 +17,7 @@ export default function TrendingSearchCategories() {
       {trendingGifs.map((gif) => {
         return (
           <Link key={gif} href={`/gifs/${gif}`}>
-            - Gifs of {gif}
+            {gif}
           </Link>
         );
       })}

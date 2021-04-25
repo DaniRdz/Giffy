@@ -1,8 +1,28 @@
+.trendig-search-categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+a:nth-child(5n + 1) {
+  background-color: rebeccapurple;
+}
+a:nth-child(5n + 2) {
+  background-color: fuchsia;
+}
+a:nth-child(5n + 3) {
+  background-color: orange;
+}
+a:nth-child(5n + 4) {
+  background-color: aqua;
+}
+a:nth-child(5n + 5) {
+  background-color: greenyellow;
+}
 .trendig-search-categories a {
   text-transform: capitalize;
+  padding: 0px 10px 0px 10px;
   transition: 0.3s ease-in-out;
 }
 
 .trendig-search-categories a:hover {
-  color: #cbcbcb;
+  padding: 0px 50px 0px 50px;
 }

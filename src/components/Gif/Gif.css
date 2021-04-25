@@ -1,6 +1,42 @@
 .Gif {
   position: relative;
   margin-bottom: 0;
+
+  border: 5px solid transparent;
+
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.Gif:hover:nth-child(5n + 1) {
+  border: 5px solid rebeccapurple;
+}
+.Gif:hover:nth-child(5n + 2) {
+  border: 5px solid greenyellow;
+}
+.Gif:hover:nth-child(5n + 3) {
+  border: 5px solid fuchsia;
+}
+.Gif:hover:nth-child(5n + 4) {
+  border: 5px solid orange;
+}
+.Gif:hover:nth-child(5n + 5) {
+  border: 5px solid aqua;
+}
+.Gif:hover:nth-child(5n + 1) h4 {
+  background: rebeccapurple;
+}
+.Gif:hover:nth-child(5n + 2) h4 {
+  background: greenyellow;
+}
+.Gif:hover:nth-child(5n + 3) h4 {
+  background: fuchsia;
+}
+.Gif:hover:nth-child(5n + 4) h4 {
+  background: orange;
+}
+.Gif:hover:nth-child(5n + 5) h4 {
+  background: aqua;
 }
 .Gif-link {
   width: 100%;
@@ -13,8 +49,10 @@
   bottom: 0;
   margin: 0;
   position: absolute;
-  width: 100%;
+
   text-align: center;
+
+  transition: 0.5s ease-in-out;
 }
 
 .Gif img {
