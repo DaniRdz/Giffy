@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import debounce from "just-debounce-it";
 
 import ListOfGifs from "../../components/ListOfGifs";
+import SearchBar from "../../components/SearchBar";
 
 import { useGifs } from "../../hooks/useGifs";
 import useNearScreen from "../../hooks/useNearScreen";
@@ -28,6 +29,7 @@ export default function SearchResults({ params }) {
 
   return (
     <>
+      <SearchBar />
       <h3 style={{ textAlign: "left", textTransform: "capitalize" }}>
         Gifs Of {decodeURI(keyword)}
       </h3>

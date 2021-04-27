@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useLocation } from "wouter";
 
 import "./SearchBar.css";
 
-function SearchBar({ onSubmit }) {
+function SearchBar() {
   const [keyword, setKeyword] = useState("");
+  const [path, pushLocation] = useLocation();
 
   const handleChange = (e) => {
     setKeyword(e.target.value);
@@ -11,7 +13,8 @@ function SearchBar({ onSubmit }) {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ keyword });
+    pushLocation(`/gifs/${keyword}`);
+    setKeyword("");
   };
   return (
     <form className="search-bar" onSubmit={handleOnSubmit}>
