@@ -9,6 +9,14 @@ export default function Details({ params }) {
   const { gif, isLoading, isError } = useSingleGif({ id: params.id });
 
   if (isError) return <Redirect to="/404" />;
+  if (isLoading) return <div>LOADING...</div>;
 
-  return isLoading ? <div>LOADING...</div> : <Gif {...gif} />;
+  return (
+    <>
+      <h3>{gif.title}</h3>
+      <div style={{ alignSelf: "center" }}>
+        <Gif {...gif} />
+      </div>
+    </>
+  );
 }
