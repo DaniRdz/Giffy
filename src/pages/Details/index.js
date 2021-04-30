@@ -10,6 +10,7 @@ export default function Details({ params }) {
 
   if (isError) return <Redirect to="/404" />;
   if (isLoading) return <div>LOADING...</div>;
+  if (!gif) return null;
 
   return (
     <>
