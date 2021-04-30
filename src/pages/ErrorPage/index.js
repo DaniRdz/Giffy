@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useLocation } from "wouter";
 
 import SearchBar from "../../components/SearchBar";
@@ -24,6 +25,9 @@ export default function ErroPage() {
 
   return (
     <>
+      <Helmet>
+        <title>GIFFY | 404</title>
+      </Helmet>
       <SearchBar />
       <div className="error-page-wrapper">
         <h3>WOOOOOOPS... SOME ERROR OCURRED</h3>

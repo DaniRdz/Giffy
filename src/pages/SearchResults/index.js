@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import debounce from "just-debounce-it";
+import { Helmet } from "react-helmet";
 
 import ListOfGifs from "../../components/ListOfGifs";
 import SearchBar from "../../components/SearchBar";
@@ -15,6 +16,8 @@ export default function SearchResults({ params }) {
     distance: "500px",
   });
 
+  const title = gifs ? `${gifs.length} Results Of ${decodeURI(keyword)}` : "";
+
   const debounceHandleNextPage = useCallback(
     debounce(() => setPage((prevPage) => prevPage + 1), 1000),
     []
@@ -29,6 +32,9 @@ export default function SearchResults({ params }) {
 
   return (
     <>
+      <Helmet>
+        <title> GIFFY | {title}</title>
+      </Helmet>
       <SearchBar />
       <h3 style={{ textAlign: "left", textTransform: "capitalize" }}>
         Gifs Of {decodeURI(keyword)}
