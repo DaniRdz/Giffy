@@ -1,0 +1,21 @@
+.btn {
+  height: 46px;
+  width: 300px;
+  background-color: blueviolet;
+  color: white;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 2px solid blueviolet;
+
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  background-color: #ba87eaf7;
+}

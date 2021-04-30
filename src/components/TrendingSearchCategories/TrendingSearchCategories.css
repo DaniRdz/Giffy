@@ -1,6 +1,7 @@
 .trendig-search-categories {
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 20px;
 }
 a:nth-child(5n + 1) {
   background-color: rebeccapurple;

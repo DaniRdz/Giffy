@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "wouter";
 
 import SearchBar from "../../components/SearchBar";
+import Button from "../../components/Button";
 
 import "./ErrorPage.css";
 
@@ -27,7 +28,7 @@ export default function ErroPage() {
       <div className="error-page-wrapper">
         <h3>WOOOOOOPS... SOME ERROR OCURRED</h3>
         <img src={randomImage()} />
-        <button onClick={() => pushLocation("/")}>Go Home</button>
+        <Button onClick={() => pushLocation("/")} name={"Go Home"} />
       </div>
     </>
   );
