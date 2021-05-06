@@ -21,7 +21,9 @@ export default function SearchResults({ params }) {
     debounce(() => setPage((prevPage) => prevPage + 1), 1000),
     []
   );
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [keyword]);
   useEffect(
     function () {
       if (isNearScreen) debounceHandleNextPage();

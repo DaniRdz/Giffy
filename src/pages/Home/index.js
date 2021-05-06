@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import ListOfGifs from "../../components/ListOfGifs";
 import TrendingSearchCategories from "../../components/TrendingSearchCategories";
@@ -8,6 +8,10 @@ import { useGifs } from "../../hooks/useGifs";
 
 export default function Home() {
   const { gifs } = useGifs();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
