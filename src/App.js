@@ -6,6 +6,8 @@ import Details from "./pages/Details";
 import SearchResults from "./pages/SearchResults";
 import ErrorPage from "./pages/ErrorPage";
 
+import SearchBar from "./components/SearchBar";
+
 import { GifsContextProvider } from "./context/GifsContext";
 import "./App.css";
 
@@ -13,9 +15,12 @@ export default function App() {
   return (
     <div className="App">
       <section className="App-content">
-        <Link href="/">
-          <h1 className="App-title">Giffy</h1>
-        </Link>
+        <header className="App-header">
+          <Link href="/">
+            <h1 className="App-title">Giffy</h1>
+          </Link>
+          <SearchBar />
+        </header>
         <GifsContextProvider>
           <Switch>
             <Route path="/" component={Home} />

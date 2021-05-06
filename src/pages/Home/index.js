@@ -1,7 +1,6 @@
-import React, { useCallback } from "react";
+import React from "react";
 
 import ListOfGifs from "../../components/ListOfGifs";
-import SearchBar from "../../components/SearchBar";
 import TrendingSearchCategories from "../../components/TrendingSearchCategories";
 import { Helmet } from "react-helmet";
 
@@ -15,7 +14,6 @@ export default function Home() {
       <Helmet>
         <title>GIFFY | Home</title>
       </Helmet>
-      <SearchBar />
       <h3 style={{ textAlign: "left" }}>Recent Search Gifs</h3>
       <ListOfGifs gifs={gifs} />
       <h3 style={{ textAlign: "left" }}>The Most Popular Gifs</h3>

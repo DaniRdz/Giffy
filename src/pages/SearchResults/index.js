@@ -3,7 +3,6 @@ import debounce from "just-debounce-it";
 import { Helmet } from "react-helmet";
 
 import ListOfGifs from "../../components/ListOfGifs";
-import SearchBar from "../../components/SearchBar";
 
 import { useGifs } from "../../hooks/useGifs";
 import useNearScreen from "../../hooks/useNearScreen";
@@ -35,7 +34,6 @@ export default function SearchResults({ params }) {
       <Helmet>
         <title> GIFFY | {title}</title>
       </Helmet>
-      <SearchBar />
       <h3 style={{ textAlign: "left", textTransform: "capitalize" }}>
         Gifs Of {decodeURI(keyword)}
       </h3>
