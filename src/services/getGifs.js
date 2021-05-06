@@ -1,6 +1,6 @@
 const apiKey = "hqRbvWO8ehW5LCBXRYaxrwdYibH8dTFM";
 export default function getGifs({
-  limit = 25,
+  limit = 20,
   keyword = "morty",
   page = 0,
 } = {}) {
