@@ -5,7 +5,7 @@ import "./SearchBar.css";
 
 function SearchBar() {
   const [keyword, setKeyword] = useState("");
-  const [path, pushLocation] = useLocation();
+  const [, pushLocation] = useLocation();
 
   const handleChange = (e) => {
     setKeyword(e.target.value);

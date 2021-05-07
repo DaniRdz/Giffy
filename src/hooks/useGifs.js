@@ -28,6 +28,6 @@ export function useGifs({ keyword } = { keyword: null }) {
       setGifs((prevGifs) => prevGifs.concat(nextGifs));
       setLoadingPage(false);
     });
-  }, [page]);
+  }, [page, setGifs, keywordToUse]);
   return { gifs, setPage, loadingPage };
 }

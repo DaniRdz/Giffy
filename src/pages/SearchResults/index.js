@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect } from "react";
 import debounce from "just-debounce-it";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 import ListOfGifs from "../../components/ListOfGifs";
 
@@ -18,8 +18,12 @@ export default function SearchResults({ params }) {
   const title = gifs ? `${gifs.length} Results Of ${decodeURI(keyword)}` : "";
 
   const debounceHandleNextPage = useCallback(
-    debounce(() => setPage((prevPage) => prevPage + 1), 1000),
-    []
+    () =>
+      debounce(
+        setPage((prevPage) => prevPage + 1),
+        1000
+      ),
+    [setPage]
   );
   useEffect(() => {
     window.scrollTo(0, 0);

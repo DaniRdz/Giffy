@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import ListOfGifs from "../../components/ListOfGifs";
 import TrendingSearchCategories from "../../components/TrendingSearchCategories";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 import { useGifs } from "../../hooks/useGifs";
 

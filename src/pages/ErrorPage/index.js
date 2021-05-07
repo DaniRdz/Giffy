@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useLocation } from "wouter";
 
 import Button from "../../components/Button";
@@ -14,7 +14,7 @@ const gifsErrors = [
 ];
 
 export default function ErroPage() {
-  const [path, pushLocation] = useLocation();
+  const [, pushLocation] = useLocation();
 
   const randomImage = () => {
     return `https://media.giphy.com/media/${
@@ -29,7 +29,7 @@ export default function ErroPage() {
       </Helmet>
       <div className="error-page-wrapper">
         <h3>WOOOOOOPS... SOME ERROR OCURRED</h3>
-        <img src={randomImage()} />
+        <img src={randomImage()} alt="ErrorImg" />
         <Button onClick={() => pushLocation("/")} name={"Go Home"} />
       </div>
     </>
